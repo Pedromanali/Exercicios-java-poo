@@ -1,0 +1,44 @@
+/**
+ * Faz o empréstimo de um item para um usuário.
+ * O empréstimo só acontece se o item existir e estiver disponível
+ * e se o usuário não estiver suspenso por multa.
+ *
+ * @param usuario usuário que vai pegar o item
+ * @param codigo  código do item no acervo
+ * @throws IllegalArgumentException se o item não existir
+ * @throws IllegalStateException    se o item estiver emprestado ou o usuário estiver suspenso
+ */
+public void emprestar(Usuario usuario, String codigo) { ... }
+
+/**
+ * Registra a devolução de um item.
+ * Se a devolução for depois do prazo, a multa é somada ao usuário.
+ *
+ * @param codigo código do item devolvido
+ * @throws IllegalArgumentException se não houver empréstimo aberto para esse código
+ */
+public void devolver(String codigo) { ... }
+
+/**
+ * Busca itens cujo título contenha o texto informado.
+ * A busca ignora maiúsculas e minúsculas.
+ *
+ * @param texto parte do título
+ * @return lista de itens encontrados (vazia se não achar nenhum)
+ */
+public List<ItemAcervo> buscarPorTitulo(String texto) { ... }
+
+/**
+ * Lista os empréstimos que passaram do prazo e ainda não foram devolvidos.
+ *
+ * @return lista de empréstimos em atraso
+ */
+public List<Emprestimo> relatorioAtrasados() { ... }
+
+/**
+ * Retorna todos os empréstimos já feitos por um usuário.
+ *
+ * @param usuario usuário consultado
+ * @return histórico de empréstimos do usuário
+ */
+public List<Emprestimo> historicoDoUsuario(Usuario usuario) { ... }S
